@@ -61,3 +61,7 @@ def my_log_config():
     logger.addHandler(to2)
 
 TOKEN = None
+print("app.py中登录成功后获取的token值为：%s" % TOKEN)
+
+USER_ID = None # 新增用户的ID
+print("--->>>app.py文件中，新增用户的ID为<<<---%s" % USER_ID)

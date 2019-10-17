@@ -75,7 +75,11 @@ class TestUser(unittest.TestCase):
         self.assertEqual(True,result.get("success"))
         self.assertEqual(10000,result.get("code"))
         self.assertIn("操作成功",result.get("message"))
+
         # 提取token值
         token = result.get("data")
-        print("登录成功后的 token 值:",token)
-        app.TOKEN = token # 变局部变量为全局变量
+        print("test_login_success中登录成功后token值为 %s:" % token)
+
+        app.TOKEN = token  # 变局部变量为全局变量
+        print("*" * 100)
+        print("test_login_success中登录成功后传给app.TOKEN值为 %s:" % app.TOKEN)

@@ -19,19 +19,27 @@ class EmpCRUD:
 
 
     # 函数2:改
-    def update(self, session, userId, username):
+    def update(self, session, username,userId):
         # session对象.put("修改的URL,后缀ID",json={"username":账号})
-        return session.put(app.BASE_URL + "user/" + userId,
-                           json={"username":username},
-                           headers={ "Authorization":"Bearer " + app.TOKEN})
+        myUpdateEmp = {"username": username,
+
+                       }
+        userId1 = "".join(userId)  # 传过来的员工id是个列表，要转成字符串
+        print("*" * 100)
+        print("**********************id = %s" % userId1)
+        return session.put(app.BASE_URL + "user/" + userId1, json=myUpdateEmp,
+                           headers={"Authorization": "Bearer " + app.TOKEN}
+                           )
 
     # 函数3:查
     def get(self,session,userId):
-        return session.get(app.BASE_URL + "user/" + userId,
+        userId1 = "".join(userId)  # 传过来的员工id是个列表，要转成字符串
+        return session.get(app.BASE_URL + "user/" + userId1,
                            headers={ "Authorization":"Bearer " + app.TOKEN})
 
 
     # 函数4:删
     def delete(self,session,userId):
-        return session.delete(app.BASE_URL + "user/" + userId,
+        userId1 = "".join(userId)  # 传过来的员工id是个列表，要转成字符串
+        return session.delete(app.BASE_URL + "user/" + userId1,
                               headers={ "Authorization":"Bearer " + app.TOKEN})
