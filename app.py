@@ -38,6 +38,7 @@ import time
 BASE_URL = "http://182.92.81.159/api/sys/"
 # 动态获取绝对路径
 PRO_PATH = os.path.dirname(os.path.abspath(__file__))
+print(PRO_PATH)
 
 def my_log_config():
     # 2.

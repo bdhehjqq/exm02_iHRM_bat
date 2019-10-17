@@ -27,7 +27,7 @@ class TestEmployee(unittest.TestCase):
     def test_emp_add(self):
         # 1.请求业务
         # response = self.emp_obj.add(self.session,"huluwa08031610","18682643335","88881343")
-        response = self.emp_obj.add(self.session, "xujmg151", "139202011151", "202011051")
+        response = self.emp_obj.add(self.session, "xujmg152", "139202011152", "202011052")
         # 2.对返回的响应结果进行断言
         print("新增员工成功的响应结果", response.json())
         # 3.获取新增用户的ID
@@ -37,7 +37,7 @@ class TestEmployee(unittest.TestCase):
         # 测试函数2：改
     def test_emp_update(self):
         # 1.发起请求
-        response = self.emp_obj.update(self.session, "xujmg1a51", app.USER_ID)
+        response = self.emp_obj.update(self.session, "xujmg1a52", app.USER_ID)
         # print(app.USER_ID)
         # 2.对返回的响应结果进行断言
         print("修改员工成功的响应结果", response.json())

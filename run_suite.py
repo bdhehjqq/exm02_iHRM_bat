@@ -4,6 +4,7 @@
 # 导包
 import unittest
 
+import app
 from case.TestIHRMEmploye import TestEmployee
 from case.TestIHRMUser import TestUser
 from tools.HTMLTestRunner import HTMLTestRunner
@@ -19,7 +20,7 @@ suite.addTest(TestEmployee("test_emp_delete"))
 
 # # 执行套件对象
 # 打开文件流
-with open("PRO_PATH/report/" + "report.html", "wb") as f:
+with open(app.PRO_PATH+"/report/" + "report.html", "wb") as f:
     # 使用 HTMLTestRunner 要运行测试套件，将结果写入文件流
     runner = HTMLTestRunner(f, title="my_reporter", description="v1.0")
     runner.run(suite)
